@@ -1,0 +1,1 @@
+C:\Users\mammen\Documents\Code\advent_of_code\2025\target\debug\libday01.rlib: C:\Users\mammen\Documents\Code\advent_of_code\2025\days\day01\src\lib.rs C:\Users\mammen\Documents\Code\advent_of_code\2025\utils\src\input.rs C:\Users\mammen\Documents\Code\advent_of_code\2025\utils\src\lib.rs C:\Users\mammen\Documents\Code\advent_of_code\2025\utils\src\runner.rs
