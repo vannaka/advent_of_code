@@ -73,32 +73,29 @@ pub fn part_2(input: &str) -> Result<usize> {
 
 
 fn check_num_for_p2_sequenc(num: usize) -> bool {
-    let mut success = true;
+    let mut success = false;
     let snum = num.to_string();
     let len = snum.len();
 
     let mut factors = list_factors(len as u32);
-    factors.sort();
     factors.remove(factors.len()-1); // Don't look for sequence eq to the whole string
+    factors.reverse();
 
     // each sz will go into the snum string in a whole integer increment
+    'outer:
     for sz in factors {
         let sz = sz as usize;
         let nibble = &snum[0..sz];
-        success = true;
-
         // Compare the first nibble to the rest
         for j in (sz..len).step_by(sz)  {
             if nibble.ne(&snum[j..j+sz]) {
-                success = false;
-                break;
+                // This nibble doesn't repeat
+                continue 'outer;
             }
         }
 
-        // We found a valid repeated sequence
-        if success {
-            break;
-        }
+        // We found a repeated sequence
+        success = true;
     }
 
     success
